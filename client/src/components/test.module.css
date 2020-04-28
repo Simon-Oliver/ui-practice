@@ -1,6 +1,12 @@
+:root {
+    --color-surface: white;
+    --color-solid: black;
+    --color-primary: teal;
+    --color-secondary: pink;
+}
+
 .button {
-    color: purple;
+    color: var(--color-secondary);
     font-weight: 600;
     width: 300px;
-    height: 100px
 }
