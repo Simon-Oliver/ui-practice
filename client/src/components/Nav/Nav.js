@@ -14,9 +14,18 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2),
+    background: 'black',
+    '&:hover': {
+      backgroundColor: 'grey',
+    },
   },
   title: {
     flexGrow: 1,
+    color: 'black',
+  },
+  appBar: {
+    background: 'white',
   },
 }));
 
@@ -25,22 +34,21 @@ const Nav = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            Simon's Projects
           </Typography>
-          <Link to="/home">
-            <Button to="/home" label="Home" color="inherit">
-              Home
-            </Button>
-          </Link>
-          <Link to="/rpi">
-            <Button color="inherit">Raspberry Pi</Button>
-          </Link>
+          <Button className={classes.menuButton} component={Link} to="/home" color="inherit">
+            Home
+          </Button>
+
+          <Button className={classes.menuButton} component={Link} to="/rpi" color="inherit">
+            Raspberry Pi
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
