@@ -1,4 +1,16 @@
 .bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   height: 100vh;
   background-color: pink;
+}
+
+.item-left {
+  grid-column-start: 1;
+  background-color: aqua;
+}
+
+.item-right {
+  grid-column-start: 2;
+  background-color: salmon;
 }

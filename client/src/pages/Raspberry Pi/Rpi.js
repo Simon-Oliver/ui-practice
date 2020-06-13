@@ -26,7 +26,10 @@ const Rpi = () => {
       <p>{items.count}</p>
       <p>{scrollDepth}</p>
       <button onClick={() => updateState(5)}>Click Me</button>
-      <div className={styles.bottom}></div>
+      <div className={styles.bottom}>
+        <div className={styles['item-left']}></div>
+        <div className={styles['item-rigth']}></div>
+      </div>
     </div>
   );
 };
