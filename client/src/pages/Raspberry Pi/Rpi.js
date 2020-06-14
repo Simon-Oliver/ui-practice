@@ -6,7 +6,8 @@ const Rpi = () => {
   const [scrollDepth, setScroll] = useState(0);
 
   const updateState = (num) => {
-    document.documentElement.scrollTo(0, 290) || document.body.scrollTo(0, 290);
+    const top = document.querySelector('.rpi_bottom__2J3TI').offsetTop;
+    document.documentElement.scrollTo(0, top) || document.body.scrollTo(0, top);
     setItems({ count: items.count + num });
   };
 

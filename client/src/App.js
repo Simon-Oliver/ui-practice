@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Nav></Nav>
         <Box component="div" p={7}>
           <Switch>
             <Route path="/home">
