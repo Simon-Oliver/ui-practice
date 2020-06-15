@@ -1,2 +1,3 @@
 import Nav from './Nav';
-export { Nav };
+import Module from './Module';
+export { Nav, Module };
