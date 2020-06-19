@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Module } from '../../components';
 import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
+
 
 const Home = () => {
   const [data, setData] = useState({});
   const [isLoaded, setLoaded] = useState(false);
 
-  const icon = <AccessAlarm style={{ fontSize: 80 }}></AccessAlarm>;
+  const modules = [
+   {
+     name: "Test",
+     icon: <AccessAlarm style={{ fontSize: 80 }}></AccessAlarm>,
+     path: "/rpi"
+   },
+   {
+    name: "Test2",
+    icon: <AccessAlarm style={{ fontSize: 80 }}></AccessAlarm>,
+    path: "/home"
+  }
+  ]
 
   useEffect(() => {
     if (isLoaded === false) {
@@ -21,10 +35,21 @@ const Home = () => {
     }
   });
 
+  const renderList = () => {
+    return modules.map(e =>{
+     return <Module name={e.name} icon={e.icon} path={e.path}></Module>
+    })
+  }
+
   return (
     <div>
       <h1>Home</h1>
-      <Module name="Test" icon={icon}></Module>
+      <Grid
+      container
+      direction="row"
+      >
+      {renderList()}
+      </Grid>
       <p>{data.data}</p>
     </div>
   );

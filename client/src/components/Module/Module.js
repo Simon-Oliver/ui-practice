@@ -9,39 +9,28 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 200,
     maxWidth: 200,
-    minHeight: 200,
     maxHeight: 200,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
+  }
 });
 
 const Module = (props) => {
-  const { name, icon } = props;
+  const { name, icon, path } = props;
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea href="/rpi">
-        <CardContent>
+    
+      <Card className={classes.root}>
+      <CardActionArea href={path}>
+       <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
             {name}
           </Typography>
           {icon}
         </CardContent>
-      </CardActionArea>
-    </Card>
+        </CardActionArea>
+      </Card>
+   
   );
 };
 
